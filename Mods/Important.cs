@@ -450,14 +450,14 @@ namespace iiMenu.Mods
                 }
                 if (!thereIsTagLag && lastTagLag)
                 {
-                    NotifiLib.SendNotification("<color=grey>[</color><color=green>TAG LAG</color><color=grey>]</color> <color=white>There is no longer tag lag.</color>");
+                    NotifiLib.SendNotification("<color=grey>[</color><color=purple>TAG LAG</color><color=grey>]</color> <color=white>There is no longer tag lag.</color>");
                 }
                 lastTagLag = thereIsTagLag;
             } else
             {
                 if (lastTagLag)
                 {
-                    NotifiLib.SendNotification("<color=grey>[</color><color=green>TAG LAG</color><color=grey>]</color> <color=white>There is no longer tag lag.</color>");
+                    NotifiLib.SendNotification("<color=grey>[</color><color=purple>TAG LAG</color><color=grey>]</color> <color=white>There is no longer tag lag.</color>");
                 }
                 lastTagLag = false;
             }

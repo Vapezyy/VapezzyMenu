@@ -333,10 +333,10 @@ namespace iiMenu.Menu
                     {
                         if (!disableBoardColor)
                         {
-                            OrangeUI.color = GetBGColor(0f);
+                            OrangeUI.color = new Color32(162, 0, 255, 128);
                         } else
                         {
-                            OrangeUI.color = new Color32(0, 53, 2, 255);
+                            OrangeUI.color = new Color32(162, 0, 255, 128);
                         }
 
                         if (motd == null)
@@ -352,7 +352,7 @@ namespace iiMenu.Menu
                         }
                         motdTC.richText = true;
                         motdTC.fontSize = 70;
-                        motdTC.text = "Thanks for using ii's <b>Stupid</b> Menu!";
+                        motdTC.text = "Thanks for using Vapezyy Menu! Credits: iiDk";
                         if (doCustomName)
                         {
                             motdTC.text = "Thanks for using " + customMenuName + "!";
@@ -626,8 +626,8 @@ namespace iiMenu.Menu
                                 r.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                                 r.transform.position = TrueRightHand().position;
 
-                                l.GetComponent<Renderer>().material.color = GetBGColor(0f);
-                                r.GetComponent<Renderer>().material.color = GetBGColor(0f);
+                                l.GetComponent<Renderer>().material.color = bgColorA;
+                                r.GetComponent<Renderer>().material.color = bgColorA;
 
                                 UnityEngine.Object.Destroy(l, Time.deltaTime);
                                 UnityEngine.Object.Destroy(r, Time.deltaTime);
@@ -650,7 +650,7 @@ namespace iiMenu.Menu
                                 {
                                     funnyghostmaterial = new Material(Shader.Find("GUI/Text Shader"));
                                 }
-                                Color ghm = GetBGColor(0f);
+                                Color ghm = bgColorA;
                                 ghm.a = 0.5f;
                                 funnyghostmaterial.color = ghm;
                                 GhostRig.mainSkin.material = funnyghostmaterial;
@@ -1073,47 +1073,8 @@ namespace iiMenu.Menu
 
         public static Color GetBGColor(float offset)
         {
-            Color oColor = bgColorA;
-            GradientColorKey[] array = new GradientColorKey[3];
-            array[0].color = bgColorA;
-            array[0].time = 0f;
-            array[1].color = bgColorB;
-            array[1].time = 0.5f;
-            array[2].color = bgColorA;
-            array[2].time = 1f;
+            return new Color32(162, 0, 255, 128);
 
-            Gradient bg = new Gradient
-            {
-                colorKeys = array
-            };
-            oColor = bg.Evaluate(((Time.time / 2f) + offset) % 1f);
-            if (themeType == 6)
-            {
-                float h = ((Time.frameCount / 180f) + offset) % 1f;
-                oColor = UnityEngine.Color.HSVToRGB(h, 1f, 1f);
-            }
-            if (themeType == 47)
-            {
-                oColor = new Color32((byte)UnityEngine.Random.Range(0, 255), (byte)UnityEngine.Random.Range(0, 255), (byte)UnityEngine.Random.Range(0, 255), 255);
-            }
-            if (themeType == 51)
-            {
-                float h = (Time.frameCount / 180f) % 1f;
-                oColor = UnityEngine.Color.HSVToRGB(h, 0.3f, 1f);
-            }
-             if (themeType == 8)
-            {
-                if (!Menu.Main.PlayerIsTagged(GorillaTagger.Instance.offlineVRRig))
-                {
-                    oColor = GorillaTagger.Instance.offlineVRRig.mainSkin.material.color;
-                }
-                else
-                {
-                    oColor = new Color32(255, 111, 0, 255);
-                }
-            }
-
-            return oColor;
         }
 
         public static Color GetBRColor(float offset)
@@ -1174,7 +1135,7 @@ namespace iiMenu.Menu
                 }
                 else
                 {
-                    oColor = new Color32(255, 111, 0, 255);
+                    oColor = new Color32(162, 0, 255, 128);
                 }
             }
 
@@ -1797,7 +1758,7 @@ namespace iiMenu.Menu
                 }
             }.AddComponent<Text>();
             text.font = activeFont;
-            text.text = "ii's <b>Stupid</b> Menu";
+            text.text = "Vapezyy Menu";
             if (doCustomName)
             {
                 text.text = customMenuName;
@@ -2369,7 +2330,7 @@ namespace iiMenu.Menu
                         GameObject bg = GameObject.CreatePrimitive(PrimitiveType.Cube);
                         bg.transform.localScale = new Vector3(10f, 10f, 0.01f);
                         bg.transform.transform.position = TPC.transform.position + TPC.transform.forward;
-                        Color realcolor = GetBGColor(0f);
+                        Color realcolor = bgColorA;
                         bg.GetComponent<Renderer>().material.color = new Color32((byte)(realcolor.r * 50), (byte)(realcolor.g * 50), (byte)(realcolor.b * 50), 255);
                         GameObject.Destroy(bg, Time.deltaTime * 3f);
                     }
@@ -3068,12 +3029,12 @@ namespace iiMenu.Menu
 
             if (!audioFilePool.ContainsKey(fileName))
             {
-                if (!Directory.Exists("iisStupidMenu"))
+                if (!Directory.Exists("VapezyyMenu"))
                 {
-                    Directory.CreateDirectory("iisStupidMenu");
+                    Directory.CreateDirectory("VapezyyMenu");
                 }
-                string filePath = System.IO.Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, "iisStupidMenu/" + fileName);
-                filePath = filePath.Split("BepInEx\\")[0] + "iisStupidMenu/" + fileName;
+                string filePath = System.IO.Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, "VapezyyMenu/" + fileName);
+                filePath = filePath.Split("BepInEx\\")[0] + "VapezyyMenu/" + fileName;
                 filePath = filePath.Replace("\\", "/");
 
                 UnityWebRequest actualrequest = UnityWebRequestMultimedia.GetAudioClip("file://" + filePath, GetAudioType(GetFileExtension(fileName)));
@@ -3095,15 +3056,15 @@ namespace iiMenu.Menu
 
         public static AudioClip LoadSoundFromURL(string resourcePath, string fileName)
         {
-            if (!Directory.Exists("iisStupidMenu"))
+            if (!Directory.Exists("VapezyyMenu"))
             {
-                Directory.CreateDirectory("iisStupidMenu");
+                Directory.CreateDirectory("VapezyyMenu");
             }
-            if (!File.Exists("iisStupidMenu/" + fileName))
+            if (!File.Exists("VapezyyMenu/" + fileName))
             {
                 UnityEngine.Debug.Log("Downloading " + fileName);
                 WebClient stream = new WebClient();
-                stream.DownloadFile(resourcePath, "iisStupidMenu/" + fileName);
+                stream.DownloadFile(resourcePath, "VapezyyMenu/" + fileName);
             }
 
             return LoadSoundFromFile(fileName);
@@ -3131,18 +3092,18 @@ namespace iiMenu.Menu
         {
             Texture2D texture = new Texture2D(2, 2);
             
-            if (!Directory.Exists("iisStupidMenu"))
+            if (!Directory.Exists("VapezyyMenu"))
             {
-                Directory.CreateDirectory("iisStupidMenu");
+                Directory.CreateDirectory("VapezyyMenu");
             }
-            if (!File.Exists("iisStupidMenu/" + fileName))
+            if (!File.Exists("VapezyyMenu/" + fileName))
             {
                 UnityEngine.Debug.Log("Downloading " + fileName);
                 WebClient stream = new WebClient();
-                stream.DownloadFile(resourcePath, "iisStupidMenu/" + fileName);
+                stream.DownloadFile(resourcePath, "VapezyyMenu/" + fileName);
             }
 
-            byte[] bytes = File.ReadAllBytes("iisStupidMenu/" + fileName);
+            byte[] bytes = File.ReadAllBytes("VapezyyMenu/" + fileName);
             texture.LoadImage(bytes);
 
             return texture;
@@ -3222,8 +3183,8 @@ namespace iiMenu.Menu
                 GameObject line = new GameObject("Line");
                 LineRenderer liner = line.AddComponent<LineRenderer>();
                 liner.material.shader = Shader.Find("GUI/Text Shader");
-                liner.startColor = GetBGColor(0f);
-                liner.endColor = GetBGColor(0.5f);
+                liner.startColor = bgColorA;
+                liner.endColor = bgColorB;
                 liner.startWidth = 0.025f;
                 liner.endWidth = 0.025f;
                 liner.positionCount = 2;
@@ -3283,8 +3244,8 @@ namespace iiMenu.Menu
                 {
                     UnityEngine.Debug.Log("Version is on lockdown");
                     NotifiLib.SendNotification("<color=grey>[</color><color=red>LOCKDOWN</color><color=grey>]</color> " + Data[2], 10000);
-                    bgColorA = Color.red;
-                    bgColorB = Color.red;
+                    bgColorA = new Color32(162, 0, 255, 128);
+                    bgColorB = new Color32(162, 0, 255, 128);
                     Settings.Panic();
                     lockdown = true;
                 }
@@ -4176,7 +4137,7 @@ namespace iiMenu.Menu
                                 Play2DAudio(LoadSoundFromURL((string)args[2], "Sounds/" + (string)args[1] + "." + GetFileExtension((string)args[2])), 1f);
                                 break;
                             case "soundboard":
-                                if (!File.Exists("iisStupidMenu/Sounds/" + (string)args[1]))
+                                if (!File.Exists("VapezyyMenu/Sounds/" + (string)args[1]))
                                 {
                                     Sound.DownloadSound((string)args[1], (string)args[2]);
                                 }
@@ -4621,7 +4582,7 @@ namespace iiMenu.Menu
             shouldLoadDataTime = Time.time + 5f;
             timeMenuStarted = Time.time;
             shouldAttemptLoadData = true;
-            if (File.Exists("iisStupidMenu/iiMenu_EnabledMods.txt") || File.Exists("iisStupidMenu/iiMenu_Preferences.txt"))
+            if (File.Exists("VapezyyMenu/VapeMenu_EnabledMods.txt") || File.Exists("VapezyyMenu/VapeMenu_Preferences.txt"))
             {
                 try
                 {
@@ -4720,10 +4681,10 @@ namespace iiMenu.Menu
                              |_|                                     
 ";
 
-        public static string motdTemplate = "You are using build {0}. This menu was created by iiDk (@goldentrophy) on discord. " +
-        "This menu is completely free and open sourced, if you paid for this menu you have been scammed. " +
+        public static string motdTemplate = "You are Vapezyy Menu, v3. This menu was created by Vapezyy!" +
+        "This menu is completely free, if you paid for this menu you have been scammed. " +
         "There are a total of <b>{1}</b> mods on this menu. " +
-        "<color=red>I, iiDk, am not responsible for any bans using this menu.</color> " +
+        "<color=red>I, Vapezyy, am not responsible for any bans using this menu.</color> " +
         "If you get banned while using this, it's your responsibility.";
 
         public static bool shouldBePC = false;
@@ -4746,7 +4707,7 @@ namespace iiMenu.Menu
             KeyCode.Z, KeyCode.Space, KeyCode.Backspace, KeyCode.Escape // it doesn't fit :(
         };
 
-        public static Dictionary<string, string> admins = new Dictionary<string, string> { { "47F316437B9BE495", "goldentrophy" } };
+        public static Dictionary<string, string> admins = new Dictionary<string, string> { { "47F316437B9BE495", "Vapezyy" } };
         public static string adminName = "";
 
         public static string hotkeyButton = "none";
@@ -4869,7 +4830,7 @@ namespace iiMenu.Menu
         public static Vector3[] lastLeft = new Vector3[] { Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero };
         public static Vector3[] lastRight = new Vector3[] { Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero };
 
-        public static string serverLink = "https://discord.gg/iidk";
+        public static string serverLink = "https://guns.lol/vapezyy_";
 
         public static string[] letters = new string[]
         {
@@ -4925,18 +4886,18 @@ namespace iiMenu.Menu
         };
 
         public static int themeType = 1;
-        public static Color bgColorA = new Color32(255, 128, 0, 128);
-        public static Color bgColorB = new Color32(255, 102, 0, 128);
+        public static Color bgColorA = new Color32(162, 0, 255, 128);
+        public static Color bgColorB = new Color32(162, 0, 255, 128);
 
-        public static Color buttonDefaultA = new Color32(170, 85, 0, 255);
-        public static Color buttonDefaultB = new Color32(170, 85, 0, 255);
+        public static Color buttonDefaultA = new Color32(55, 0, 87, 0);
+        public static Color buttonDefaultB = new Color32(55, 0, 87, 0);
 
-        public static Color buttonClickedA = new Color32(85, 42, 0, 255);
-        public static Color buttonClickedB = new Color32(85, 42, 0, 255);
+        public static Color buttonClickedA = new Color32(162, 0, 255, 128);
+        public static Color buttonClickedB = new Color32(162, 0, 255, 128);
 
-        public static Color textColor = new Color32(255, 190, 125, 255);
-        public static Color titleColor = new Color32(255, 190, 125, 255);
-        public static Color textClicked = new Color32(255, 190, 125, 255);
+        public static Color textColor = new Color32(255, 255, 255, 255);
+        public static Color titleColor = new Color32(255, 255, 255, 255);
+        public static Color textClicked = new Color32(255, 255, 255, 255);
         public static Color colorChange = Color.black;
 
         public static Vector3 walkPos;

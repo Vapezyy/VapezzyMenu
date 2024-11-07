@@ -14,13 +14,13 @@ namespace iiMenu.Mods
                 "Joystick Menu",
                 "Thin Menu",
                 "Force Enable Hands",
-                "Show Anti Cheat Reports <color=grey>[</color><color=green>Self</color><color=grey>]</color>",
+                "Show Anti Cheat Reports <color=grey>[</color><color=purple>Self</color><color=grey>]</color>",
                 "Disable Enabled GUI",
                 "Disable Board Colors",
                 "Disable Disconnect Button",
                 "Disable Page Buttons",
                 "Disable FPS Counter",
-                "Fake Oculus Menu <color=grey>[</color><color=green>X</color><color=grey>]</color>"
+                "Fake Oculus Menu <color=grey>[</color><color=purple>X</color><color=grey>]</color>"
             };
 
             themeType = 29;
@@ -44,9 +44,9 @@ namespace iiMenu.Mods
         {
             string[] presetMods = new string[]
             {
-                "Ghost <color=grey>[</color><color=green>A</color><color=grey>]</color>",
-                "Invisible <color=grey>[</color><color=green>B</color><color=grey>]</color>",
-                "Noclip <color=grey>[</color><color=green>T</color><color=grey>]</color>",
+                "Ghost <color=grey>[</color><color=purple>A</color><color=grey>]</color>",
+                "Invisible <color=grey>[</color><color=purple>B</color><color=grey>]</color>",
+                "Noclip <color=grey>[</color><color=purple>T</color><color=grey>]</color>",
                 "Steam Long Arms",
                 "Break Audio Gun",
                 "No Finger Movement",
@@ -68,24 +68,24 @@ namespace iiMenu.Mods
 
         public static void SaveCustomPreset(int id)
         {
-            if (!Directory.Exists("iisStupidMenu"))
+            if (!Directory.Exists("VapezyyMenu"))
             {
-                Directory.CreateDirectory("iisStupidMenu");
+                Directory.CreateDirectory("VapezyyMenu");
             }
-            if (!Directory.Exists("iisStupidMenu/SavedPresets"))
+            if (!Directory.Exists("VapezyyMenu/SavedPresets"))
             {
-                Directory.CreateDirectory("iisStupidMenu/SavedPresets");
+                Directory.CreateDirectory("VapezyyMenu/SavedPresets");
             }
-            File.WriteAllText("iisStupidMenu/SavedPresets/Preset_" + id.ToString() + ".txt", Settings.SavePreferencesToText());
+            File.WriteAllText("VapezyyMenu/SavedPresets/Preset_" + id.ToString() + ".txt", Settings.SavePreferencesToText());
         }
 
         public static void LoadCustomPreset(int id)
         {
-            if (Directory.Exists("iisStupidMenu"))
+            if (Directory.Exists("VapezyyMenu"))
             {
-                if (Directory.Exists("iisStupidMenu/SavedPresets"))
+                if (Directory.Exists("VapezyyMenu/SavedPresets"))
                 {
-                    string text = File.ReadAllText("iisStupidMenu/SavedPresets/Preset_" + id.ToString() + ".txt");
+                    string text = File.ReadAllText("VapezyyMenu/SavedPresets/Preset_" + id.ToString() + ".txt");
                     UnityEngine.Debug.Log(text);
                     Settings.LoadPreferencesFromText(text);
                 }
@@ -173,12 +173,12 @@ namespace iiMenu.Mods
             {
                 "Thin Menu",
                 "No Finger Movement",
-                "Fake Oculus Menu <color=grey>[</color><color=green>X</color><color=grey>]</color>",
+                "Fake Oculus Menu <color=grey>[</color><color=purple>X</color><color=grey>]</color>",
                 "Disable Gamemode Buttons",
                 "Anti Crash",
                 "Anti Moderator",
-                "Anti Report <color=grey>[</color><color=green>Disconnect</color><color=grey>]</color>",
-                "Show Anti Cheat Reports <color=grey>[</color><color=green>Self</color><color=grey>]</color>"
+                "Anti Report <color=grey>[</color><color=purple>Disconnect</color><color=grey>]</color>",
+                "Show Anti Cheat Reports <color=grey>[</color><color=purple>Self</color><color=grey>]</color>"
             };
 
             themeType = 34;

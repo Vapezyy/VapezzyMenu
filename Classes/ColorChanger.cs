@@ -1,4 +1,5 @@
-﻿using System;
+﻿using iiMenu.Menu;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
@@ -49,7 +50,7 @@ namespace iiMenu.Classes
                         gameObjectRenderer.material.color = GorillaTagger.Instance.offlineVRRig.mainSkin.material.color;
                     } else
                     {
-                        gameObjectRenderer.material.color = new Color32(255, 111, 0, 255);
+                        gameObjectRenderer.material.color = Main.bgColorA;
                     }
                     
                 }

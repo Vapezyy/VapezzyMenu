@@ -529,15 +529,15 @@ namespace iiMenu.Mods
 
             switch (themeType) {
                 case 1: // Orange
-                    bgColorA = new Color32(255, 128, 0, 128);
-                    bgColorB = new Color32(255, 102, 0, 128);
-                    buttonDefaultA = new Color32(170, 85, 0, 255);
-                    buttonDefaultB = new Color32(170, 85, 0, 255);
-                    buttonClickedA = new Color32(85, 42, 0, 255);
-                    buttonClickedB = new Color32(85, 42, 0, 255);
-                    titleColor = new Color32(255, 190, 125, 255);
-                    textColor = new Color32(255, 190, 125, 255);
-                    textClicked = new Color32(255, 190, 125, 255);
+                    bgColorA = new Color32(162, 0, 255, 128);
+                    bgColorB = new Color32(162, 0, 255, 128);
+                    buttonDefaultA = Color.black;
+                    buttonDefaultB = Color.black;
+                    buttonClickedA = new Color32(162, 0, 255, 128);
+                    buttonClickedB = new Color32(162, 0, 255, 128);
+                    titleColor = new Color32(255, 255, 255, 255);
+                    textColor = new Color32(255, 255, 255, 255);
+                    textClicked = new Color32(255, 255, 255, 255);
                     break;
                 case 2: // Blue Magenta
                     bgColorA = Color.blue;
@@ -574,11 +574,11 @@ namespace iiMenu.Mods
                     break;
                 case 5: // Kman
                     bgColorA = Color.black;
-                    bgColorB = new Color32(110, 0, 0, 255);
+                    bgColorB = new Color32(162, 0, 255, 128);
                     buttonDefaultA = Color.black;
-                    buttonDefaultB = new Color32(110, 0, 0, 255);
-                    buttonClickedA = new Color32(110, 0, 0, 255);
-                    buttonClickedB = new Color32(110, 0, 0, 255);
+                    buttonDefaultB = Color.black;
+                    buttonClickedA = new Color32(162, 0, 255, 128);
+                    buttonClickedB = new Color32(162, 0, 255, 128);
                     titleColor = Color.white;
                     textColor = Color.white;
                     textClicked = Color.white;
@@ -619,12 +619,12 @@ namespace iiMenu.Mods
                     textClicked = Color.white;
                     break;
                 case 9: // Lava
-                    bgColorA = Color.black;
-                    bgColorB = new Color32(255, 111, 0, 255);
+                    bgColorA = new Color32(162, 0, 255, 128);
+                    bgColorB = new Color32(162, 0, 255, 128);
                     buttonDefaultA = Color.black;
                     buttonDefaultB = Color.black;
-                    buttonClickedA = new Color32(255, 111, 0, 255);
-                    buttonClickedB = Color.black;
+                    buttonClickedA = new Color32(162, 0, 255, 128);
+                    buttonClickedB = new Color32(162, 0, 255, 128);
                     titleColor = Color.white;
                     textColor = Color.white;
                     textClicked = Color.white;
@@ -718,15 +718,15 @@ namespace iiMenu.Mods
                     textClicked = Color.black;
                     break;
                 case 18: // Orange Fade
-                    bgColorA = new Color32(255, 128, 0, 255);
-                    bgColorB = Color.black;
+                    bgColorA = new Color32(162, 0, 255, 128);
+                    bgColorB = new Color32(162, 0, 255, 128);
                     buttonDefaultA = Color.black;
                     buttonDefaultB = Color.black;
-                    buttonClickedA = new Color32(255, 128, 0, 255);
-                    buttonClickedB = new Color32(255, 128, 0, 255);
-                    titleColor = new Color32(255, 128, 0, 255);
-                    textColor = new Color32(255, 128, 0, 255);
-                    textClicked = Color.black;
+                    buttonClickedA = new Color32(162, 0, 255, 128);
+                    buttonClickedB = new Color32(162, 0, 255, 128);
+                    titleColor = new Color32(255, 255, 255, 255);
+                    textColor = new Color32(255, 255, 255, 255);
+                    textClicked = new Color32(255, 255, 255, 255);
                     break;
                 case 19: // Yellow Fade
                     bgColorA = Color.yellow;
@@ -1111,16 +1111,16 @@ namespace iiMenu.Mods
             bool loadedThisTime = false;
             if (fileData == null)
             {
-                if (!Directory.Exists("iisStupidMenu"))
+                if (!Directory.Exists("VapezyyMenu"))
                 {
-                    Directory.CreateDirectory("iisStupidMenu");
+                    Directory.CreateDirectory("VapezyyMenu");
                 }
-                if (!File.Exists("iisStupidMenu/iiMenu_CustomThemeColor.txt"))
+                if (!File.Exists("VapezyyMenu/VapeMenu_CustomThemeColor.txt"))
                 {
-                    File.WriteAllText("iisStupidMenu/iiMenu_CustomThemeColor.txt", "255,128,0\n0,0,0\n255,0,0\n255,0,0\n0,255,0\n0,255,0\n255,255,255\n0,0,255\n255,0,255");
+                    File.WriteAllText("VapezyyMenu/VapeMenu_CustomThemeColor.txt", "255,128,0\n0,0,0\n255,0,0\n255,0,0\n0,255,0\n0,255,0\n255,255,255\n0,0,255\n255,0,255");
                 }
 
-                fileData = File.ReadAllText("iisStupidMenu/iiMenu_CustomThemeColor.txt");
+                fileData = File.ReadAllText("VapezyyMenu/VapeMenu_CustomThemeColor.txt");
                 loadedThisTime = true;
             }
             string[] linesplit = fileData.Split("\n");
@@ -1155,21 +1155,21 @@ namespace iiMenu.Mods
 
         public static void CustomMenuBackground()
         {
-            if (!Directory.Exists("iisStupidMenu"))
+            if (!Directory.Exists("VapezyyMenu"))
             {
-                Directory.CreateDirectory("iisStupidMenu");
+                Directory.CreateDirectory("VapezyyMenu");
             }
-            if (!File.Exists("iisStupidMenu/iiMenu_CustomMenuBackground.txt"))
+            if (!File.Exists("VapezyyMenu/VapeMenu_CustomMenuBackground.txt"))
             {
-                File.WriteAllText("iisStupidMenu/iiMenu_CustomMenuBackground.txt", "");
+                File.WriteAllText("VapezyyMenu/VapeMenu_CustomMenuBackground.txt", "");
             }
 
-            if (File.Exists("iisStupidMenu/MenuBG.png"))
+            if (File.Exists("VapezyyMenu/MenuBG.png"))
             {
-                File.Delete("iisStupidMenu/MenuBG.png");
+                File.Delete("VapezyyMenu/MenuBG.png");
             }
             doCustomMenuBackground = true;
-            customMenuBackgroundImage = LoadTextureFromURL(File.ReadAllText("iisStupidMenu/iiMenu_CustomMenuBackground.txt"), "MenuBG.png");
+            customMenuBackgroundImage = LoadTextureFromURL(File.ReadAllText("VapezyyMenu/VapeMenu_CustomMenuBackground.txt"), "MenuBG.png");
             ReloadMenu();
         }
 
@@ -1287,7 +1287,7 @@ namespace iiMenu.Mods
             {
                 notificationDecayTime = 1000;
             }
-            GetIndex("Change Notification Time").overlapText = "Change Notification Time <color=grey>[</color><color=green>" + (notificationDecayTime / 1000).ToString() + "</color><color=grey>]</color>";
+            GetIndex("Change Notification Time").overlapText = "Change Notification Time <color=grey>[</color><color=purple>" + (notificationDecayTime / 1000).ToString() + "</color><color=grey>]</color>";
         }
 
         public static void ChangePointerPosition()
@@ -1542,15 +1542,15 @@ namespace iiMenu.Mods
         public static void CustomMenuName()
         {
             doCustomName = true;
-            if (!Directory.Exists("iisStupidMenu"))
+            if (!Directory.Exists("VapezyyMenu"))
             {
-                Directory.CreateDirectory("iisStupidMenu");
+                Directory.CreateDirectory("VapezyyMenu");
             }
-            if (!File.Exists("iisStupidMenu/iiMenu_CustomMenuName.txt"))
+            if (!File.Exists("VapezyyMenu/VapeMenu_CustomMenuName.txt"))
             {
-                File.WriteAllText("iisStupidMenu/iiMenu_CustomMenuName.txt", "Your Text Here");
+                File.WriteAllText("VapezyyMenu/VapeMenu_CustomMenuName.txt", "Your Text Here");
             }
-            customMenuName = File.ReadAllText("iisStupidMenu/iiMenu_CustomMenuName.txt");
+            customMenuName = File.ReadAllText("VapezyyMenu/VapeMenu_CustomMenuName.txt");
         }
 
         public static void NoCustomMenuName()
@@ -1773,11 +1773,11 @@ namespace iiMenu.Mods
 
         public static void SavePreferences()
         {
-            if (!Directory.Exists("iisStupidMenu"))
+            if (!Directory.Exists("VapezyyMenu"))
             {
-                Directory.CreateDirectory("iisStupidMenu");
+                Directory.CreateDirectory("VapezyyMenu");
             }
-            File.WriteAllText("iisStupidMenu/iiMenu_Preferences.txt", SavePreferencesToText());
+            File.WriteAllText("VapezyyMenu/VapeMenu_Preferences.txt", SavePreferencesToText());
         }
 
         public static void LegacyLoadPreferences()
@@ -1785,7 +1785,7 @@ namespace iiMenu.Mods
             Panic();
             try
             {
-                string config = File.ReadAllText("iisStupidMenu/iiMenu_EnabledMods.txt");
+                string config = File.ReadAllText("VapezyyMenu/VapeMenu_EnabledMods.txt");
                 string[] activebuttons = config.Split("\n");
                 for (int index = 0; index < activebuttons.Length; index++)
                 {
@@ -1796,7 +1796,7 @@ namespace iiMenu.Mods
 
             try
             {
-                string favez = File.ReadAllText("iisStupidMenu/iiMenu_FavoriteMods.txt");
+                string favez = File.ReadAllText("VapezyyMenu/VapeMenu_FavoriteMods.txt");
                 string[] favz = favez.Split("\n");
 
                 favorites.Clear();
@@ -1809,7 +1809,7 @@ namespace iiMenu.Mods
 
             try
             {
-                string MODDER = File.ReadAllText("iisStupidMenu/iiMenu_ModData.txt");
+                string MODDER = File.ReadAllText("VapezyyMenu/VapeMenu_ModData.txt");
                 string[] data = MODDER.Split("\n");
 
                 platformMode = int.Parse(data[0]) - 1;
@@ -1852,9 +1852,9 @@ namespace iiMenu.Mods
             } // Legacy, do not add
             catch { }
 
-            string pager = File.ReadAllText("iisStupidMenu/iiMenu_PageType.txt");
-            string themer = File.ReadAllText("iisStupidMenu/iiMenu_Theme.txt");
-            string fonter = File.ReadAllText("iisStupidMenu/iiMenu_Font.txt");
+            string pager = File.ReadAllText("VapezyyMenu/VapeMenu_PageType.txt");
+            string themer = File.ReadAllText("VapezyyMenu/VapeMenu_Theme.txt");
+            string fonter = File.ReadAllText("VapezyyMenu/VapeMenu_Font.txt");
 
             pageButtonType = int.Parse(pager) - 1;
             Toggle("Change Page Type");
@@ -1946,22 +1946,22 @@ namespace iiMenu.Mods
         {
             try
             {
-                if (Directory.Exists("iisStupidMenu"))
+                if (Directory.Exists("VapezyyMenu"))
                 {
-                    if (File.Exists("iisStupidMenu/iiMenu_EnabledMods.txt"))
+                    if (File.Exists("VapezyyMenu/VapeMenu_EnabledMods.txt"))
                     {
                         LegacyLoadPreferences();
-                        File.Delete("iisStupidMenu/iiMenu_EnabledMods.txt");
-                        File.Delete("iisStupidMenu/iiMenu_FavoriteMods.txt");
-                        File.Delete("iisStupidMenu/iiMenu_ModData.txt");
-                        File.Delete("iisStupidMenu/iiMenu_PageType.txt");
-                        File.Delete("iisStupidMenu/iiMenu_Theme.txt");
-                        File.Delete("iisStupidMenu/iiMenu_Font.txt");
+                        File.Delete("VapezyyMenu/VapeMenu_EnabledMods.txt");
+                        File.Delete("VapezyyMenu/VapeMenu_FavoriteMods.txt");
+                        File.Delete("VapezyyMenu/VapeMenu_ModData.txt");
+                        File.Delete("VapezyyMenu/VapeMenu_PageType.txt");
+                        File.Delete("VapezyyMenu/VapeMenu_Theme.txt");
+                        File.Delete("VapezyyMenu/VapeMenu_Font.txt");
                         SavePreferences();
                     }
                     else
                     {
-                        string text = File.ReadAllText("iisStupidMenu/iiMenu_Preferences.txt");
+                        string text = File.ReadAllText("VapezyyMenu/VapeMenu_Preferences.txt");
                         LoadPreferencesFromText(text);
                     }
                 }
@@ -1996,7 +1996,7 @@ namespace iiMenu.Mods
             {
                 internetTime = 1;
             }
-            GetIndex("crTime").overlapText = "Change Reconnect Time <color=grey>[</color><color=green>" + internetTime.ToString() + "</color><color=grey>]</color>";
+            GetIndex("crTime").overlapText = "Change Reconnect Time <color=grey>[</color><color=purple>" + internetTime.ToString() + "</color><color=grey>]</color>";
         }
 
         public static void ThinMenuOn()
@@ -2068,7 +2068,7 @@ namespace iiMenu.Mods
                 buttonClickIndex = 0;
             }
             buttonClickSound = sounds[buttonClickIndex];
-            GetIndex("cbsound").overlapText = "Change Button Sound <color=grey>[</color><color=green>" + buttonSoundNames[buttonClickIndex] + "</color><color=grey>]</color>";
+            GetIndex("cbsound").overlapText = "Change Button Sound <color=grey>[</color><color=purple>" + buttonSoundNames[buttonClickIndex] + "</color><color=grey>]</color>";
         }
 
         public static void ChangeButtonVolume()
@@ -2078,7 +2078,7 @@ namespace iiMenu.Mods
             {
                 buttonClickVolume = 0;
             }
-            GetIndex("cbvol").overlapText = "Change Button Volume <color=grey>[</color><color=green>" + buttonClickVolume.ToString() + "</color><color=grey>]</color>";
+            GetIndex("cbvol").overlapText = "Change Button Volume <color=grey>[</color><color=purple>" + buttonClickVolume.ToString() + "</color><color=grey>]</color>";
         }
 
         public static void DisableButtonVibration()

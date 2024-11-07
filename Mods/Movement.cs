@@ -50,7 +50,7 @@ namespace iiMenu.Mods
                 "Fish Food"
             };
 
-            GetIndex("Change Platform Type").overlapText = "Change Platform Type <color=grey>[</color><color=green>" + platformNames[platformMode] + "</color><color=grey>]</color>";
+            GetIndex("Change Platform Type").overlapText = "Change Platform Type <color=grey>[</color><color=purple>" + platformNames[platformMode] + "</color><color=grey>]</color>";
         }
 
         public static void ChangePlatformShape()
@@ -71,7 +71,7 @@ namespace iiMenu.Mods
                 "1x1"
             };
 
-            GetIndex("Change Platform Shape").overlapText = "Change Platform Shape <color=grey>[</color><color=green>" + platformShapes[platformShape] + "</color><color=grey>]</color>";
+            GetIndex("Change Platform Shape").overlapText = "Change Platform Shape <color=grey>[</color><color=purple>" + platformShapes[platformShape] + "</color><color=grey>]</color>";
         }
 
         public static GameObject CreatePlatform()
@@ -435,7 +435,7 @@ namespace iiMenu.Mods
             jmulti = jmultiamounts[speedboostCycle];
 
             string[] speedNames = new string[] { "Slow", "Normal", "Fast", "Ultra Fast" };
-            GetIndex("Change Speed Boost Amount").overlapText = "Change Speed Boost Amount <color=grey>[</color><color=green>" + speedNames[speedboostCycle] + "</color><color=grey>]</color>";
+            GetIndex("Change Speed Boost Amount").overlapText = "Change Speed Boost Amount <color=grey>[</color><color=purple>" + speedNames[speedboostCycle] + "</color><color=grey>]</color>";
         }
 
         public static void PlatformSpam()
@@ -489,7 +489,7 @@ namespace iiMenu.Mods
             flySpeed = speedamounts[flySpeedCycle];
 
             string[] speedNames = new string[] { "Slow", "Normal", "Fast", "Extra Fast", "Extra Slow" };
-            GetIndex("Change Fly Speed").overlapText = "Change Fly Speed <color=grey>[</color><color=green>" + speedNames[flySpeedCycle] + "</color><color=grey>]</color>";
+            GetIndex("Change Fly Speed").overlapText = "Change Fly Speed <color=grey>[</color><color=purple>" + speedNames[flySpeedCycle] + "</color><color=grey>]</color>";
         }
 
         public static void ChangeArmLength()
@@ -504,7 +504,7 @@ namespace iiMenu.Mods
             armlength = lengthAmounts[longarmCycle];
 
             string[] lengthNames = new string[] { "Shorter", "Unnoticable", "Normal", "Long", "Extreme" };
-            GetIndex("Change Arm Length").overlapText = "Change Arm Length <color=grey>[</color><color=green>" + lengthNames[longarmCycle] + "</color><color=grey>]</color>";
+            GetIndex("Change Arm Length").overlapText = "Change Arm Length <color=grey>[</color><color=purple>" + lengthNames[longarmCycle] + "</color><color=grey>]</color>";
         }
 
         public static void Fly()
@@ -685,7 +685,7 @@ namespace iiMenu.Mods
             driveSpeed = speedamounts[speedboostCycle];
 
             string[] speedNames = new string[] { "Normal", "Fast", "Ultra Fast", "Slow" };
-            GetIndex("cdSpeed").overlapText = "Change Drive Speed <color=grey>[</color><color=green>" + speedNames[speedboostCycle] + "</color><color=grey>]</color>";
+            GetIndex("cdSpeed").overlapText = "Change Drive Speed <color=grey>[</color><color=purple>" + speedNames[speedboostCycle] + "</color><color=grey>]</color>";
         }
 
         public static void Drive()

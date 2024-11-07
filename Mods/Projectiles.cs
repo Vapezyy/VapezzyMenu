@@ -107,7 +107,7 @@ namespace iiMenu.Mods.Spammers
                 projmode = 0;
             }
 
-            GetIndex("Change Projectile").overlapText = "Change Projectile <color=grey>[</color><color=green>" + shortProjectileNames[projmode] + "</color><color=grey>]</color>";
+            GetIndex("Change Projectile").overlapText = "Change Projectile <color=grey>[</color><color=purple>" + shortProjectileNames[projmode] + "</color><color=grey>]</color>";
         }
 
         public static void ChangeTrail()
@@ -157,7 +157,7 @@ namespace iiMenu.Mods.Spammers
             };
 
             ShootStrength = ShootStrengthTypes[shootCycle];
-            GetIndex("Change Shoot Speed").overlapText = "Change Shoot Speed <color=grey>[</color><color=green>" + ShootStrengthNames[shootCycle] + "</color><color=grey>]</color>";
+            GetIndex("Change Shoot Speed").overlapText = "Change Shoot Speed <color=grey>[</color><color=purple>" + ShootStrengthNames[shootCycle] + "</color><color=grey>]</color>";
         }
 
         public static void IncreaseRed()
@@ -168,7 +168,7 @@ namespace iiMenu.Mods.Spammers
                 red = 0f;
             }
 
-            GetIndex("Red").overlapText = "Red <color=grey>[</color><color=green>" + (Mathf.Floor(red * 10f) / 10f).ToString() + "</color><color=grey>]</color>";
+            GetIndex("Red").overlapText = "Red <color=grey>[</color><color=purple>" + (Mathf.Floor(red * 10f) / 10f).ToString() + "</color><color=grey>]</color>";
         }
 
         public static void IncreaseGreen()
@@ -179,7 +179,7 @@ namespace iiMenu.Mods.Spammers
                 green = 0f;
             }
 
-            GetIndex("Green").overlapText = "Green <color=grey>[</color><color=green>" + (Mathf.Floor(green * 10f) / 10f).ToString() + "</color><color=grey>]</color>";
+            GetIndex("Green").overlapText = "Green <color=grey>[</color><color=purple>" + (Mathf.Floor(green * 10f) / 10f).ToString() + "</color><color=grey>]</color>";
         }
 
         public static void IncreaseBlue()
@@ -190,7 +190,7 @@ namespace iiMenu.Mods.Spammers
                 blue = 0f;
             }
 
-            GetIndex("Blue").overlapText = "Blue <color=grey>[</color><color=green>" + (Mathf.Floor(blue * 10f) / 10f).ToString() + "</color><color=grey>]</color>";
+            GetIndex("Blue").overlapText = "Blue <color=grey>[</color><color=purple>" + (Mathf.Floor(blue * 10f) / 10f).ToString() + "</color><color=grey>]</color>";
         }
 
         public static void ProjectileDelay()
@@ -201,7 +201,7 @@ namespace iiMenu.Mods.Spammers
                 projDebounceType = 0.1f; // Was 0 but that was bannable so uhh
             }
 
-            GetIndex("Projectile Delay").overlapText = "Projectile Delay <color=grey>[</color><color=green>" + (Mathf.Floor(projDebounceType * 10f) / 10f).ToString() + "</color><color=grey>]</color>";
+            GetIndex("Projectile Delay").overlapText = "Projectile Delay <color=grey>[</color><color=purple>" + (Mathf.Floor(projDebounceType * 10f) / 10f).ToString() + "</color><color=grey>]</color>";
         }
 
         public static void ProjectileSpam()

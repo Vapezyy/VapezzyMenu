@@ -20,7 +20,7 @@ namespace iiMenu.Mods
         {
             if (PhotonNetwork.IsMasterClient)
             {
-                NotifiLib.SendNotification("<color=grey>[</color><color=green>SUCCESS</color><color=grey>]</color> <color=white>You are master client.</color>");
+                NotifiLib.SendNotification("<color=grey>[</color><color=purple>SUCCESS</color><color=grey>]</color> <color=white>You are master client.</color>");
             }
             else
             {

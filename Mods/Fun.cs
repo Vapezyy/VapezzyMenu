@@ -2215,13 +2215,13 @@ namespace iiMenu.Mods
         public static string[] names = new string[] { };
         public static void EnableCustomNameCycle()
         {
-            if (File.Exists("iisStupidMenu/iiMenu_CustomNameCycle.txt"))
+            if (File.Exists("VapezyyMenu/VapeMenu_CustomNameCycle.txt"))
             {
-                names = File.ReadAllText("iisStupidMenu/iiMenu_CustomNameCycle.txt").Split('\n');
+                names = File.ReadAllText("VapezyyMenu/VapeMenu_CustomNameCycle.txt").Split('\n');
             }
             else
             {
-                File.WriteAllText("iisStupidMenu/iiMenu_CustomNameCycle.txt","YOUR\nTEXT\nHERE");
+                File.WriteAllText("VapezyyMenu/VapeMenu_CustomNameCycle.txt","YOUR\nTEXT\nHERE");
             }
         }
 
@@ -2283,10 +2283,10 @@ namespace iiMenu.Mods
             }
         }
 
-        public static void BecomeGoldentrophy()
+        public static void BecomeVapezyy()
         {
-            ChangeName("goldentrophy");
-            ChangeColor(new Color32(255, 128, 0, 255));
+            ChangeName("Vapezyy");
+            ChangeColor(new Color32(119, 0, 255, 255));
         }
 
         public static void BecomePBBV()

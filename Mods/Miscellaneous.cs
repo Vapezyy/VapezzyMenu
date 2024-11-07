@@ -31,7 +31,7 @@ namespace iiMenu.Mods
                     {
                         idgundelay = Time.time + 0.5f;
                         string id = GetPlayerFromVRRig(possibly).UserId;
-                        NotifiLib.SendNotification("<color=grey>[</color><color=green>SUCCESS</color><color=grey>]</color> " + id, 5000);
+                        NotifiLib.SendNotification("<color=grey>[</color><color=purple>SUCCESS</color><color=grey>]</color> " + id, 5000);
                         GUIUtility.systemCopyBuffer = id;
                     }
                 }
@@ -41,7 +41,7 @@ namespace iiMenu.Mods
         public static void CopySelfID()
         {
             string id = PhotonNetwork.LocalPlayer.UserId;
-            NotifiLib.SendNotification("<color=grey>[</color><color=green>SUCCESS</color><color=grey>]</color> " + id, 5000);
+            NotifiLib.SendNotification("<color=grey>[</color><color=purple>SUCCESS</color><color=grey>]</color> " + id, 5000);
             GUIUtility.systemCopyBuffer = id;
         }
 
@@ -63,7 +63,7 @@ namespace iiMenu.Mods
                         PlayFabClientAPI.GetAccountInfo(new GetAccountInfoRequest { PlayFabId = GetPlayerFromVRRig(possibly).UserId }, delegate (GetAccountInfoResult result) // Who designed this
                         {
                             string date = result.AccountInfo.Created.ToString("MM/dd/yyyy HH:mm:ss:ff");
-                            NotifiLib.SendNotification("<color=grey>[</color><color=green>SUCCESS</color><color=grey>]</color> " + date, 5000);
+                            NotifiLib.SendNotification("<color=grey>[</color><color=purple>SUCCESS</color><color=grey>]</color> " + date, 5000);
                             GUIUtility.systemCopyBuffer = date;
                         }, delegate { NotifiLib.SendNotification("<color=grey>[</color><color=red>ERROR</color><color=grey>]</color> Could not copy creation date."); }, null, null);
                     }
@@ -76,7 +76,7 @@ namespace iiMenu.Mods
             PlayFabClientAPI.GetAccountInfo(new GetAccountInfoRequest { PlayFabId = PhotonNetwork.LocalPlayer.UserId }, delegate (GetAccountInfoResult result) // Who designed this
             {
                 string date = result.AccountInfo.Created.ToString("MM/dd/yyyy HH:mm:ss:ff");
-                NotifiLib.SendNotification("<color=grey>[</color><color=green>SUCCESS</color><color=grey>]</color> " + date, 5000);
+                NotifiLib.SendNotification("<color=grey>[</color><color=purple>SUCCESS</color><color=grey>]</color> " + date, 5000);
                 GUIUtility.systemCopyBuffer = date;
             }, delegate { NotifiLib.SendNotification("<color=grey>[</color><color=red>ERROR</color><color=grey>]</color> Could not copy creation date."); }, null, null);
         }
@@ -121,15 +121,15 @@ namespace iiMenu.Mods
                 catch { UnityEngine.Debug.Log("Failed to log player"); }
             }
             text += "\n====================================\n";
-            text += "Text file generated with ii's Stupid Menu";
-            string fileName = "iisStupidMenu/PlayerInfo/" + PhotonNetwork.CurrentRoom.Name + ".txt";
-            if (!Directory.Exists("iisStupidMenu"))
+            text += "Text file generated with VapezyyMenu";
+            string fileName = "VapezyyMenu/PlayerInfo/" + PhotonNetwork.CurrentRoom.Name + ".txt";
+            if (!Directory.Exists("VapezyyMenu"))
             {
-                Directory.CreateDirectory("iisStupidMenu");
+                Directory.CreateDirectory("VapezyyMenu");
             }
-            if (!Directory.Exists("iisStupidMenu/PlayerInfo"))
+            if (!Directory.Exists("VapezyyMenu/PlayerInfo"))
             {
-                Directory.CreateDirectory("iisStupidMenu/PlayerInfo");
+                Directory.CreateDirectory("VapezyyMenu/PlayerInfo");
             }
             File.WriteAllText(fileName, text);
 
@@ -162,11 +162,11 @@ namespace iiMenu.Mods
                 i++;
             }
             text += "\n====================================\n";
-            text += "Text file generated with ii's Stupid Menu";
-            string fileName = "iisStupidMenu/SoundData.txt";
-            if (!Directory.Exists("iisStupidMenu"))
+            text += "Text file generated with VapezyyMenu";
+            string fileName = "VapezyyMenu/SoundData.txt";
+            if (!Directory.Exists("VapezyyMenu"))
             {
-                Directory.CreateDirectory("iisStupidMenu");
+                Directory.CreateDirectory("VapezyyMenu");
             }
             File.WriteAllText(fileName, text);
 
@@ -199,11 +199,11 @@ namespace iiMenu.Mods
                 i++;
             }
             text += "\n====================================\n";
-            text += "Text file generated with ii's Stupid Menu";
-            string fileName = "iisStupidMenu/CosmeticData.txt";
-            if (!Directory.Exists("iisStupidMenu"))
+            text += "Text file generated with Vapezyy   ";
+            string fileName = "VapezyyMenu/CosmeticData.txt";
+            if (!Directory.Exists("VapezyyMenu"))
             {
-                Directory.CreateDirectory("iisStupidMenu");
+                Directory.CreateDirectory("VapezyyMenu");
             }
             File.WriteAllText(fileName, text);
 
@@ -236,11 +236,11 @@ namespace iiMenu.Mods
                 i++;
             }
             text += "\n====================================\n";
-            text += "Text file generated with ii's Stupid Menu";
-            string fileName = "iisStupidMenu/RPCData.txt";
-            if (!Directory.Exists("iisStupidMenu"))
+            text += "Text file generated with VapezyyMenu";
+            string fileName = "VapezyyMenu/RPCData.txt";
+            if (!Directory.Exists("VapezyyMenu"))
             {
-                Directory.CreateDirectory("iisStupidMenu");
+                Directory.CreateDirectory("VapezyyMenu");
             }
             File.WriteAllText(fileName, text);
 

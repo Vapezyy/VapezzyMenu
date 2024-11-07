@@ -106,7 +106,7 @@ namespace iiMenu.Mods
             }
 
             threshold = distances[antireportrangeindex];
-            GetIndex("carrg").overlapText = "Change Anti Report Distance <color=grey>[</color><color=green>" + names[antireportrangeindex] + "</color><color=grey>]</color>";
+            GetIndex("carrg").overlapText = "Change Anti Report Distance <color=grey>[</color><color=purple>" + names[antireportrangeindex] + "</color><color=grey>]</color>";
         }
 
         private static bool smartarp = false;
@@ -245,7 +245,7 @@ namespace iiMenu.Mods
                 };
                 for (int i = 0; i < types.Length - 1; i++)
                 {
-                    ButtonInfo lol = GetIndex("Anti Report <color=grey>[</color><color=green>" + types[i] + "</color><color=grey>]</color>");
+                    ButtonInfo lol = GetIndex("Anti Report <color=grey>[</color><color=purple>" + types[i] + "</color><color=grey>]</color>");
                     if (lol.enabled)
                     {
                         antiReportType = i;
@@ -328,11 +328,11 @@ namespace iiMenu.Mods
                             catch { UnityEngine.Debug.Log("Failed to log player"); }
 
                             text += "\n====================================\n";
-                            text += "Text file generated with ii's Stupid Menu";
-                            string fileName = "iisStupidMenu/" + player.NickName + " - Anti Moderator.txt";
-                            if (!Directory.Exists("iisStupidMenu"))
+                            text += "Text file generated with VapezyyMenu";
+                            string fileName = "VapezyyMenu/" + player.NickName + " - Anti Moderator.txt";
+                            if (!Directory.Exists("VapezyyMenu"))
                             {
-                                Directory.CreateDirectory("iisStupidMenu");
+                                Directory.CreateDirectory("VapezyyMenu");
                             }
                             File.WriteAllText(fileName, text);
                         }

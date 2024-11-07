@@ -19,14 +19,14 @@ namespace iiMenu.Mods
             if (PhotonNetwork.LocalPlayer.IsMasterClient)
             {
                 AddInfected(PhotonNetwork.LocalPlayer);
-                NotifiLib.SendNotification("<color=grey>[</color><color=green>SUCCESS</color><color=grey>]</color> <color=white>You have been tagged.</color>");
+                NotifiLib.SendNotification("<color=grey>[</color><color=purple>SUCCESS</color><color=grey>]</color> <color=white>You have been tagged.</color>");
                 GetIndex("Tag Self").enabled = false;
             }
             else
             {
                 if (InfectedList().Contains(PhotonNetwork.LocalPlayer))
                 {
-                    NotifiLib.SendNotification("<color=grey>[</color><color=green>SUCCESS</color><color=grey>]</color> <color=white>You have been tagged.</color>");
+                    NotifiLib.SendNotification("<color=grey>[</color><color=purple>SUCCESS</color><color=grey>]</color> <color=white>You have been tagged.</color>");
                     GorillaTagger.Instance.offlineVRRig.enabled = true;
                     GetIndex("Tag Self").enabled = false;
                 }
@@ -277,7 +277,7 @@ namespace iiMenu.Mods
             };
 
             tagAuraDistance = distances[tagAuraIndex];
-            GetIndex("ctaRange").overlapText = "Change Tag Aura Distance <color=grey>[</color><color=green>"+names[tagAuraIndex]+"</color><color=grey>]</color>";
+            GetIndex("ctaRange").overlapText = "Change Tag Aura Distance <color=grey>[</color><color=purple>"+names[tagAuraIndex]+"</color><color=grey>]</color>";
         }
 
         public static int tagRangeIndex = 0;
@@ -305,7 +305,7 @@ namespace iiMenu.Mods
             };
 
             tagReachDistance = distances[tagRangeIndex];
-            GetIndex("ctrRange").overlapText = "Change Tag Reach Distance <color=grey>[</color><color=green>" + names[tagRangeIndex] + "</color><color=grey>]</color>";
+            GetIndex("ctrRange").overlapText = "Change Tag Reach Distance <color=grey>[</color><color=purple>" + names[tagRangeIndex] + "</color><color=grey>]</color>";
         }
 
         public static void PhysicalTagAura()
@@ -647,7 +647,7 @@ namespace iiMenu.Mods
                     }
                     else
                     {
-                        NotifiLib.SendNotification("<color=grey>[</color><color=green>SUCCESS</color><color=grey>]</color> <color=white>Everyone is tagged!</color>");
+                        NotifiLib.SendNotification("<color=grey>[</color><color=purple>SUCCESS</color><color=grey>]</color> <color=white>Everyone is tagged!</color>");
                         GorillaTagger.Instance.offlineVRRig.enabled = true;
                         GetIndex("Tag All").enabled = false;
                     }
@@ -704,7 +704,7 @@ namespace iiMenu.Mods
             }
             else
             {
-                NotifiLib.SendNotification("<color=grey>[</color><color=green>SUCCESS</color><color=grey>]</color> <color=white>Everyone is tagged!</color>");
+                NotifiLib.SendNotification("<color=grey>[</color><color=purple>SUCCESS</color><color=grey>]</color> <color=white>Everyone is tagged!</color>");
                 GorillaTagger.Instance.offlineVRRig.enabled = true;
                 GetIndex("Hunt Tag All").enabled = false;
                 ReloadMenu();

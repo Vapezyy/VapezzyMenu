@@ -24,13 +24,13 @@ namespace iiMenu.Mods.Spammers
         {
             buttonsType = 18;
             pageNumber = 0;
-            if (!Directory.Exists("iisStupidMenu"))
+            if (!Directory.Exists("VapezyyMenu"))
             {
-                Directory.CreateDirectory("iisStupidMenu");
+                Directory.CreateDirectory("VapezyyMenu");
             }
-            if (!Directory.Exists("iisStupidMenu/Sounds"))
+            if (!Directory.Exists("VapezyyMenu/Sounds"))
             {
-                Directory.CreateDirectory("iisStupidMenu/Sounds");
+                Directory.CreateDirectory("VapezyyMenu/Sounds");
             }
             List<string> enabledSounds = new List<string> { };
             foreach (ButtonInfo binfo in Buttons.buttons[18])
@@ -42,7 +42,7 @@ namespace iiMenu.Mods.Spammers
             }
             List<ButtonInfo> soundbuttons = new List<ButtonInfo> { new ButtonInfo { buttonText = "Exit Soundboard", method = () => Settings.EnableFun(), isTogglable = false, toolTip = "Returns you back to the fun mods." } };
             int index = 0;
-            string[] files = Directory.GetFiles("iisStupidMenu/Sounds");
+            string[] files = Directory.GetFiles("VapezyyMenu/Sounds");
             foreach (string file in files)
             {
                 index++;
@@ -97,9 +97,9 @@ namespace iiMenu.Mods.Spammers
         public static void DownloadSound(string name, string url)
         {
             string filename = "Sounds/" + name + "." + GetFileExtension(url);
-            if (File.Exists("iisStupidMenu/"+filename))
+            if (File.Exists("VapezyyMenu/"+filename))
             {
-                File.Delete("iisStupidMenu/" + filename);
+                File.Delete("VapezyyMenu/" + filename);
             }
             if (audioFilePool.ContainsKey(name))
             {
@@ -110,7 +110,7 @@ namespace iiMenu.Mods.Spammers
             {
                 Play2DAudio(soundDownloaded, 1f);
             }
-            NotifiLib.SendNotification("<color=grey>[</color><color=green>SUCCESS</color><color=grey>]</color> Successfully downloaded " + name + " to the soundboard.");
+            NotifiLib.SendNotification("<color=grey>[</color><color=purple>SUCCESS</color><color=grey>]</color> Successfully downloaded " + name + " to the soundboard.");
         }
 
         public static bool AudioIsPlaying = false;
@@ -170,8 +170,8 @@ namespace iiMenu.Mods.Spammers
 
         public static void OpenSoundFolder()
         {
-            string filePath = System.IO.Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, "iisStupidMenu/Sounds");
-            filePath = filePath.Split("BepInEx\\")[0] + "iisStupidMenu/Sounds";
+            string filePath = System.IO.Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, "VapezyyMenu/Sounds");
+            filePath = filePath.Split("BepInEx\\")[0] + "VapezyyMenu/Sounds";
             Process.Start(filePath);
         }
 
@@ -204,7 +204,7 @@ namespace iiMenu.Mods.Spammers
             {
                 BindMode = 0;
             }
-            GetIndex("sbds").overlapText = "Sound Bindings <color=grey>[</color><color=green>" + names[BindMode] + "</color><color=grey>]</color>";
+            GetIndex("sbds").overlapText = "Sound Bindings <color=grey>[</color><color=purple>" + names[BindMode] + "</color><color=grey>]</color>";
         }
 
         public static void BetaPlayTag(int id, float volume)
@@ -571,13 +571,13 @@ namespace iiMenu.Mods.Spammers
             {
                 soundId = 0;
             }
-            GetIndex("Custom Sound Spam").overlapText = "Custom Sound Spam <color=grey>[</color><color=green>" + soundId.ToString() + "</color><color=grey>]</color>";
+            GetIndex("Custom Sound Spam").overlapText = "Custom Sound Spam <color=grey>[</color><color=purple>" + soundId.ToString() + "</color><color=grey>]</color>";
         }
 
         public static void IncreaseSoundID()
         {
             soundId++;
-            GetIndex("Custom Sound Spam").overlapText = "Custom Sound Spam <color=grey>[</color><color=green>" + soundId.ToString() + "</color><color=grey>]</color>";
+            GetIndex("Custom Sound Spam").overlapText = "Custom Sound Spam <color=grey>[</color><color=purple>" + soundId.ToString() + "</color><color=grey>]</color>";
         }
 
         public static void CustomSoundSpam()

@@ -15,14 +15,14 @@ namespace iiMenu.Patches
         {
             if (newPlayer != oldnewplayer)
             {
-                NotifiLib.SendNotification("<color=grey>[</color><color=green>JOIN</color><color=grey>] </color><color=white>Name: " + newPlayer.NickName + "</color>");
+                NotifiLib.SendNotification("<color=grey>[</color><color=purple>JOIN</color><color=grey>] </color><color=white>Name: " + newPlayer.NickName + "</color>");
                 if (customSoundOnJoin)
                 {
-                    if (!Directory.Exists("iisStupidMenu"))
+                    if (!Directory.Exists("VapezyyMenu"))
                     {
-                        Directory.CreateDirectory("iisStupidMenu");
+                        Directory.CreateDirectory("VapezyyMenu");
                     }
-                    File.WriteAllText("iisStupidMenu/iiMenu_CustomSoundOnJoin.txt", "PlayerJoin");
+                    File.WriteAllText("VapezyyMenu/iiMenu_CustomSoundOnJoin.txt", "PlayerJoin");
                 }
                 oldnewplayer = newPlayer;
             }

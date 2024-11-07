@@ -16,13 +16,13 @@ namespace iiMenu.UI
 {
     public class Main : MonoBehaviour
     {
-        private string inputText = "goldentrophy";
+        private string inputText = "Vapezyy";
 
-        private string r = "255";
+        private string r = "136";
 
-        private string g = "128";
+        private string g = "0";
 
-        private string b = "0";
+        private string b = "255";
 
         public static bool isOpen = true;
 
@@ -52,7 +52,7 @@ namespace iiMenu.UI
 
         private void Start()
         {
-            if (File.Exists("iisStupidMenu/iiMenu_HideGUI.txt"))
+            if (File.Exists("VapezyyMenu/VapeMenu_HideGUI.txt"))
             {
                 isOpen = false;
             }
@@ -67,15 +67,15 @@ namespace iiMenu.UI
                 isOpen = !isOpen;
                 if (isOpen)
                 {
-                    if (File.Exists("iisStupidMenu/iiMenu_HideGUI.txt"))
+                    if (File.Exists("VapezyyMenu/VapeMenu_HideGUI.txt"))
                     {
-                        File.Delete("iisStupidMenu/iiMenu_HideGUI.txt");
+                        File.Delete("VapezyyMenu/VapeMenu_HideGUI.txt");
                     }
                 } else
                 {
-                    if (!File.Exists("iisStupidMenu/iiMenu_HideGUI.txt"))
+                    if (!File.Exists("VapezyyMenu/VapeMenu_HideGUI.txt"))
                     {
-                        File.WriteAllText("iisStupidMenu/iiMenu_HideGUI.txt", "true");
+                        File.WriteAllText("VapezyyMenu/VapeMenu_HideGUI.txt", "true");
                     }
                 }
             }
@@ -92,7 +92,7 @@ namespace iiMenu.UI
                 GUI.skin.button.fontStyle = activeFontStyle;
                 GUI.skin.label.fontStyle = activeFontStyle;
 
-                Color victimColor = GetIndex("Swap GUI Colors").enabled ? textColor : GetBGColor(0f);
+                Color victimColor = GetIndex("Swap GUI Colors").enabled ? textColor : bgColorA;
 
                 GUI.color = victimColor;
                 GUI.backgroundColor = victimColor;
@@ -124,12 +124,11 @@ namespace iiMenu.UI
                         Matrix4x4 matrix = GUI.matrix;
 
                         GUIUtility.RotateAroundPivot(Mathf.Sin(Time.time * 2f) * 10f, pos.center);
-                        GUI.DrawTexture(pos, icon);
                         GUI.matrix = matrix;
 
                         GUIStyle style = new GUIStyle(GUI.skin.label);
                         style.alignment = TextAnchor.LowerRight;
-                        GUI.Label(new Rect(Screen.width - 590, Screen.height - 75, 512, 64), "Build "+PluginInfo.Version+"\n"+(serverLink.Replace("https://", "")), style);
+                        GUI.Label(new Rect(Screen.width - 590, Screen.height - 75, 512, 64), "Using VapezyyMenu v3 \n"+"By Vapezyy", style);
                     }
                 }
                 catch { }

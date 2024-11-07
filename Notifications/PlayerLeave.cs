@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using HarmonyLib;
 using iiMenu.Notifications;
 using Photon.Pun;
 using Photon.Realtime;
@@ -18,11 +19,11 @@ namespace iiMenu.Patches
                 NotifiLib.SendNotification("<color=grey>[</color><color=red>LEAVE</color><color=grey>]</color> <color=white>Name: " + otherPlayer.NickName + "</color>");
                 if (customSoundOnJoin)
                 {
-                    if (!Directory.Exists("iisStupidMenu"))
+                    if (!Directory.Exists("VapezyyMenu"))
                     {
-                        Directory.CreateDirectory("iisStupidMenu");
+                        Directory.CreateDirectory("VapezyyMenu");
                     }
-                    File.WriteAllText("iisStupidMenu/iiMenu_CustomSoundOnJoin.txt", "PlayerLeave");
+                    File.WriteAllText("VapezyyMenu/iiMenu_CustomSoundOnJoin.txt", "PlayerLeave");
                 }
                 a = otherPlayer;
             }
