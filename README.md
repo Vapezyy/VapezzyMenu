@@ -4,7 +4,7 @@
 
 ---
 
-
+<a href="#howtoinstall">How to install</a>
 
 ---
 
@@ -34,10 +34,11 @@ Yup, this menu is **SO ILLEGAL** beacuse you can use it in **NORMAL GAMEMODES** 
 
 
     1. Go to releases, [here](https://github.com/Vapezyy/VapezyyMenu/releases/latest)
-    2. Download **VapezyyMenu.dll**
-    3. Go to **Gorilla Tag BepInEx** plugins folder
-    4. Drag and drop **VapezyyMenu.dll**
-    5. Done, now u can use menu clicking **Y** button on your controller
+    2. Download VapezyyMenu.dll
+    3. Go to Gorilla Tag BepInEx plugins folder
+    4. Drag and drop VapezyyMenu.dll
+    5. Done, now u can use menu clicking Y button on your controller
+
 </div>
 
 # Thanks
