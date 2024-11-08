@@ -4,7 +4,7 @@
 
 ---
 
-<a href="#howtoinstall">How to install</a>
+[Latest](https://github.com/Vapezyy/VapezzyMenu/releases/latest)
 
 ---
 
