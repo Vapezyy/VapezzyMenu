@@ -28,8 +28,10 @@ This is **OPEN SOURCE**, you can **DOWNLOAD IT, RECREATE OR PUBLISH**
 Yup, this menu is **SO ILLEGAL** beacuse you can use it in **NORMAL GAMEMODES** and it have mods: **FLY, TELEPORT GUN and more, more, more!**
 **I DON`T RESPONSIBLE FOR ANY BANS USING THIS MENU!**
 
+# How to install
+
 <div class="howtoinstall">
-    # How to install
+
 
     1. Go to releases, [here](https://github.com/Vapezyy/VapezyyMenu/releases/latest)
     2. Download **VapezyyMenu.dll**
